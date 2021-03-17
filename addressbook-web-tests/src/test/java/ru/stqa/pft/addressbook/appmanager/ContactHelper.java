@@ -2,7 +2,6 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
@@ -27,7 +26,7 @@ public class ContactHelper extends HelperBase{
     type(By.name("nickname"), contactData.getNickname());
 
     if (creation) {
-      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(ContactData.getGroup());
+        select(By.name("new_group"), ContactData.getGroup());
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
@@ -48,5 +47,15 @@ public class ContactHelper extends HelperBase{
 
   public void submitContactModification() {
     click(By.name("update"));
+  }
+
+  public void createNewContact(ContactData contact) {
+    fillContactForm(contact, true);
+    submitContactCreation();
+    returnToHomePage();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
   }
 }

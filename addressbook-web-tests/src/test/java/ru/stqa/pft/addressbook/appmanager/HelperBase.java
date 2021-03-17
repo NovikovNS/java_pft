@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class HelperBase {
 
@@ -25,6 +26,12 @@ public class HelperBase {
         wd.findElement(locator).clear();
         wd.findElement(locator).sendKeys(text);
       }
+    }
+  }
+
+  protected void select(By locator, String select) {
+    if (select != null) {
+      new Select(wd.findElement(locator)).selectByVisibleText(select);
     }
   }
 
