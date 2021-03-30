@@ -3,18 +3,17 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.Comparator;
 import java.util.List;
 
 public class ContactModificationTests extends TestBase{
 
-  @Test
+  @Test(enabled = false)
   public void testContactModification() {
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     if (! app.getContactHelper().isThereAContact()) {
-      app.getNavigationHelper().gotoNewContactPage();
+      app.goTo().gotoNewContactPage();
       app.getContactHelper().createNewContact(new ContactData("Test1", null, "Test2", null, null));
     }
     List<ContactData> before = app.getContactHelper().getContactList();
