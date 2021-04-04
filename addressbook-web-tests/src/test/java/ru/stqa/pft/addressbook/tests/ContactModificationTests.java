@@ -12,9 +12,9 @@ public class ContactModificationTests extends TestBase{
 
   @BeforeMethod
   public void ensurePreconditions(){
-    app.goTo().HomePage();
+    app.goTo().homePage();
     if (app.contact().all().size() == 0) {
-      app.goTo().NewContactPage();
+      app.goTo().newContactPage();
       app.contact().create(new ContactData().withFirstname("Test").withLastname("Test2"));
     }
   }

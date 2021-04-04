@@ -18,11 +18,11 @@ public class NavigationHelper extends HelperBase {
     click(By.xpath("//a[contains(text(),'groups')]"));
   }
 
-  public void NewContactPage() {
+  public void newContactPage() {
     click(By.linkText("add new"));
   }
 
-  public void HomePage() {
+  public void homePage() {
     if (isElementPresent(By.id("maintable"))) {
       return;
     }
