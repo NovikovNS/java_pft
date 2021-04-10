@@ -19,7 +19,7 @@ public class ContactData {
   @Expose
   private String nickname;
   @Expose
-  private static String group;
+  private String group = null;
   @Expose
   private String homePhone;
   @Expose
@@ -134,7 +134,7 @@ public class ContactData {
     return nickname;
   }
 
-  public static String getGroup() {
+  public String getGroup() {
     return group;
   }
 

@@ -5,7 +5,7 @@
     "lastname": "LastName 0",
     "nickname": "NickName 0",
     "homePhone": "8888880",
-    "email": "TestEmail0@mail.ru "
+    "email": "TestEmail0@mail.ru"
   },
   {
     "firstname": "TestName 1",
@@ -13,7 +13,7 @@
     "lastname": "LastName 1",
     "nickname": "NickName 1",
     "homePhone": "8888881",
-    "email": "TestEmail1@mail.ru "
+    "email": "TestEmail1@mail.ru"
   },
   {
     "firstname": "TestName 2",
@@ -21,22 +21,6 @@
     "lastname": "LastName 2",
     "nickname": "NickName 2",
     "homePhone": "8888882",
-    "email": "TestEmail2@mail.ru "
-  },
-  {
-    "firstname": "TestName 3",
-    "middlename": "NickName 3",
-    "lastname": "LastName 3",
-    "nickname": "NickName 3",
-    "homePhone": "8888883",
-    "email": "TestEmail3@mail.ru "
-  },
-  {
-    "firstname": "TestName 4",
-    "middlename": "NickName 4",
-    "lastname": "LastName 4",
-    "nickname": "NickName 4",
-    "homePhone": "8888884",
-    "email": "TestEmail4@mail.ru "
+    "email": "TestEmail2@mail.ru"
   }
 ]

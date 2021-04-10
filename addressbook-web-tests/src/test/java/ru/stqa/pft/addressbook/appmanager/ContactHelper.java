@@ -28,10 +28,11 @@ public class ContactHelper extends HelperBase{
     type(By.name("lastname"), contactData.getLastname());
     type(By.name("nickname"), contactData.getNickname());
     attach(By.name("photo"), contactData.getPhoto());
-    type(By.linkText("text"), contactData.getFirstname());
+    //for why next line? forget
+    //type(By.linkText("text"), contactData.getFirstname());
 
     if (creation) {
-        select(By.name("new_group"), ContactData.getGroup());
+      select(By.name("new_group"), contactData.getGroup());
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
