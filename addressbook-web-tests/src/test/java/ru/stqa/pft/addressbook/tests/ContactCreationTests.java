@@ -17,12 +17,12 @@ import java.util.stream.Collectors;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ContactCreationTests extends TestBase{
+public class ContactCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validContactsFromJson() throws IOException {
-    BufferedReader reader = new BufferedReader(
-            new FileReader(new File("src/test/resources/contacts.json")));
+    try (BufferedReader reader = new BufferedReader(
+            new FileReader(new File("src/test/resources/contacts.json")))) {
     StringBuilder json = new StringBuilder();
     String line = reader.readLine();
     while (line != null) {
@@ -31,13 +31,16 @@ public class ContactCreationTests extends TestBase{
     }
     Gson gson = new Gson();
     List<ContactData> contacts = gson.fromJson(String.valueOf(json),
-            new TypeToken<List<ContactData>>(){}.getType());
-    return contacts.stream().map((g) -> new Object[] {g}).collect(Collectors.toList()).iterator();
+            new TypeToken<List<ContactData>>() {
+            }.getType());
+    return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
   }
+}
 
 
   @Test(dataProvider = "validContactsFromJson")
   public void testNewContact(ContactData contact) {
+    app.goTo().homePage();
     Contacts before = app.contact().all();
     app.goTo().newContactPage();
     app.contact().create(contact);
