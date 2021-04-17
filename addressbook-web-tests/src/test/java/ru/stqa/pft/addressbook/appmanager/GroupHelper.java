@@ -84,6 +84,7 @@ public class GroupHelper extends HelperBase {
 
   private Groups groupCache = null;
 
+  //метод чтения всех групп с интерфейса в список для возможности сравнения
   public Groups all() {
     if (groupCache != null) {
       return new Groups(groupCache);

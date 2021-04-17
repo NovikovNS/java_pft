@@ -14,13 +14,5 @@
     "nickname": "NickName 1",
     "homePhone": "8888881",
     "email": "TestEmail1@mail.ru"
-  },
-  {
-    "firstname": "TestName 2",
-    "middlename": "NickName 2",
-    "lastname": "LastName 2",
-    "nickname": "NickName 2",
-    "homePhone": "8888882",
-    "email": "TestEmail2@mail.ru"
   }
 ]
