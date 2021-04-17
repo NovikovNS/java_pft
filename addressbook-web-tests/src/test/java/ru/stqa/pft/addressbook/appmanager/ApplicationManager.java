@@ -13,14 +13,14 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class ApplicationManager {
-  private Properties properties;
+  private final Properties properties;
   protected WebDriver wd;
 
   private ContactHelper contactHelper;
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
-  private String browser;
+  private final String browser;
 
   public ApplicationManager(String browser) {
     this.browser = browser;
