@@ -33,6 +33,15 @@ public class DbHelper {
     return new Groups(result);
   }
 
+  public GroupData groupWithId(int id) {
+    Session session = sessionFactory.openSession();
+    session.beginTransaction();
+    GroupData group = (GroupData) session.createQuery("from GroupData where id=" + id).getSingleResult();
+    session.getTransaction().commit();
+    session.close();
+    return group;
+  }
+
   public Contacts contacts() {
     Session session = sessionFactory.openSession();
     session.beginTransaction();
@@ -40,6 +49,15 @@ public class DbHelper {
     session.getTransaction().commit();
     session.close();
     return new Contacts(result);
+  }
+
+  public ContactData contactWithId(int id) {
+    Session session = sessionFactory.openSession();
+    session.beginTransaction();
+    ContactData contact = (ContactData) session.createQuery( "from ContactData where id=" + id).getSingleResult();
+    session.getTransaction().commit();
+    session.close();
+    return contact;
   }
 
 }
