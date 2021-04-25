@@ -33,8 +33,6 @@ public class ContactHelper extends HelperBase{
     type(By.name("home"), contactData.getHomePhone());
     type(By.name("email"), contactData.getEmail());
     attach(By.name("photo"), contactData.getPhoto());
-    //for why next line? forget
-    //type(By.linkText("text"), contactData.getFirstname());
 
     if (creation) {
       if (contactData.getGroups().size() > 0) {

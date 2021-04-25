@@ -16,7 +16,7 @@ public class TestBase {
   }
 
   @AfterSuite
-  public void tearDown() throws Exception {
+  public void tearDown() {
     app.stop();
   }
 }
