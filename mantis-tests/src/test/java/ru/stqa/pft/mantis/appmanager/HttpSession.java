@@ -51,4 +51,10 @@ public class HttpSession {
     String body = geTextFrom(response);
     return body.contains(String.format("<span class=\"user-info\">%s</span>", username));
   }
+
+//  public boolean changePasswordUser (String name) {
+//    HttpGet get = new HttpGet(app.getProperty("web.baseURL") + "/index.php");
+//
+//  }
+
 }
